@@ -1,0 +1,35 @@
+Building DAG of jobs...
+Your conda installation is not configured to use strict channel priorities. This is however crucial for having robust and correct environments (for details, see https://conda-forge.org/docs/user/tipsandtricks.html). Please consider to configure strict priorities by executing 'conda config --set channel_priority strict'.
+Creating conda environment envs/env.yaml...
+Downloading and installing remote packages.
+Environment for /Users/emelbiner/PycharmProjects/miuulm/envs/env.yaml created (location: .snakemake/conda/1ce388d5fe59ca98358ea5c71e7072ed_)
+Using shell: /bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job               count
+--------------  -------
+all                   1
+tRNAscan_stats        1
+total                 2
+
+Select jobs to execute...
+
+[Thu Dec 21 14:27:25 2023]
+rule tRNAscan_stats:
+    input: resource/fasta/G_intestinalis.fasta
+    output: output/G_intestinalis.tRNA, output/G_intestinalis.stats
+    jobid: 1
+    reason: Missing output files: output/G_intestinalis.tRNA
+    resources: tmpdir=/var/folders/mv/wrkfyz2d17vd3f3j_wlzxrph0000gn/T
+
+/Users/emelbiner/anaconda3/envs/snakemake/bin/python /Users/emelbiner/PycharmProjects/miuulm/.snakemake/scripts/tmpwgkpcjfe.tRNAscan_stats.py
+Activating conda environment: .snakemake/conda/1ce388d5fe59ca98358ea5c71e7072ed_
+Waiting at most 5 seconds for missing files.
+MissingOutputException in rule tRNAscan_stats in file /Users/emelbiner/PycharmProjects/miuulm/Snakefile, line 10:
+Job 1  completed successfully, but some output files are missing. Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+output/G_intestinalis.tRNA
+output/G_intestinalis.stats
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2023-12-21T142709.180624.snakemake.log
