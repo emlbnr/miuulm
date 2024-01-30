@@ -37,7 +37,7 @@ rule tRNAscan_stats_wildcard:
 rule all:
     input: "output/tRNAscan_result.txt",
            "output/tRNAscan/G_intestinalis.tRNA",
-     expand ("output/{sp}.tRNA", sp= ["G_muris","G_intestinalisv"]),
+        expand ("output/{sp}.tRNA", sp= ["G_muris","G_intestinalisv"]),
 
 rule tRNAscan_stats_wildcard:
     input:
@@ -71,8 +71,8 @@ rule makeblastdb:
 rule all:
     input: "output/tRNA_scan_result.txt",
            "output/tRNAscan/G_intestinalis.tRNA",
-        expand("output/tRNAscan/{sp}.tRNA", sp=["G_muris, G_intestinalis]),
-        expand("output/blastn/G_intestinalis/{sp}.blastn", sp=["G_muris", "S_salmonicida"])
+           expand("output/tRNAscan/{sp}.tRNA", sp=["G_muris", "G_intestinalis"]),
+           expand("output/blastn/G_intestinalis/{sp}.blastn", sp=["G_muris", "S_salmonicida"])
 
 rule blastn:
     input:
