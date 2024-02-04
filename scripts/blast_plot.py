@@ -8,7 +8,7 @@ blast_G_muris.columns = ['qseqid', 'sseqid', 'pident', 'length', 'mismatch', 'ga
 #sns.histplot(data=blast_G_muris, x='pident')
 #sns.scatterplot(data=blast_G_muris.reset_index(), x='index', y='bitscore', hue='pident')
 #sns.scatterplot(data=blast_G_muris.reset_index(), x='index', y='length', hue='pident')
-pivot_table = pd.pivot_table(blast_G_muris, values='length', index='qseqid', columns='qseqid')
+#pivot_table = pd.pivot_table(blast_G_muris, values='length', index='qseqid', columns='qseqid')
 #sns.heatmap(pivot_table)
 
 plt.show()
