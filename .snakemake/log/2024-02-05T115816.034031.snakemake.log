@@ -1,0 +1,78 @@
+Building DAG of jobs...
+Your conda installation is not configured to use strict channel priorities. This is however crucial for having robust and correct environments (for details, see https://conda-forge.org/docs/user/tipsandtricks.html). Please consider to configure strict priorities by executing 'conda config --set channel_priority strict'.
+Creating conda environment envs/env.yaml...
+Downloading and installing remote packages.
+Environment for /Users/emelbiner/PycharmProjects/miuulm/envs/env.yaml created (location: .snakemake/conda/0df9f43b8d3739a6e13baec256e18b81_)
+Retrieving input from storage.
+Using shell: /bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job                        count
+-----------------------  -------
+all                            1
+tRNAscan                       1
+tRNAscan_stats                 1
+tRNAscan_stats_wildcard        3
+total                          6
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Feb  5 11:58:32 2024]
+localrule tRNAscan_stats_wildcard:
+    input: resource/fasta/G_intestinalis.fasta
+    output: output/tRNAscan/G_intestinalis.tRNA, output/tRNAscan/G_intestinalis.stats
+    jobid: 4
+    reason: Missing output files: output/tRNAscan/G_intestinalis.tRNA
+    wildcards: genome=G_intestinalis
+    resources: tmpdir=/var/folders/mv/wrkfyz2d17vd3f3j_wlzxrph0000gn/T
+
+Activating conda environment: .snakemake/conda/0df9f43b8d3739a6e13baec256e18b81_
+[Mon Feb  5 11:58:50 2024]
+Finished job 4.
+1 of 6 steps (17%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Feb  5 11:58:50 2024]
+localrule tRNAscan_stats_wildcard:
+    input: resource/fasta/S_salmonicida.fasta
+    output: output/tRNAscan/S_salmonicida.tRNA, output/tRNAscan/S_salmonicida.stats
+    jobid: 5
+    reason: Missing output files: output/tRNAscan/S_salmonicida.tRNA
+    wildcards: genome=S_salmonicida
+    resources: tmpdir=/var/folders/mv/wrkfyz2d17vd3f3j_wlzxrph0000gn/T
+
+Activating conda environment: .snakemake/conda/0df9f43b8d3739a6e13baec256e18b81_
+[Mon Feb  5 11:59:08 2024]
+Finished job 5.
+2 of 6 steps (33%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Feb  5 11:59:08 2024]
+localrule tRNAscan:
+    input: resource/fasta/G_intestinalis.fasta
+    output: output/tRNA_scan_result.txt
+    jobid: 1
+    reason: Missing output files: output/tRNA_scan_result.txt
+    resources: tmpdir=/var/folders/mv/wrkfyz2d17vd3f3j_wlzxrph0000gn/T
+
+bash scripts/tRNAscan.sh resource/fasta/G_intestinalis.fasta output/tRNA_scan_result.txt
+Activating conda environment: .snakemake/conda/0df9f43b8d3739a6e13baec256e18b81_
+[Mon Feb  5 11:59:08 2024]
+Error in rule tRNAscan:
+    jobid: 1
+    input: resource/fasta/G_intestinalis.fasta
+    output: output/tRNA_scan_result.txt
+    conda-env: /Users/emelbiner/PycharmProjects/miuulm/.snakemake/conda/0df9f43b8d3739a6e13baec256e18b81_
+    shell:
+        bash scripts/tRNAscan.sh resource/fasta/G_intestinalis.fasta output/tRNA_scan_result.txt
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2024-02-05T115816.034031.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

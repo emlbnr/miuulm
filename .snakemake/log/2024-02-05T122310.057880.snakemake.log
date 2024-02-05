@@ -1,0 +1,40 @@
+Building DAG of jobs...
+Your conda installation is not configured to use strict channel priorities. This is however crucial for having robust and correct environments (for details, see https://conda-forge.org/docs/user/tipsandtricks.html). Please consider to configure strict priorities by executing 'conda config --set channel_priority strict'.
+Retrieving input from storage.
+Using shell: /bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job            count
+-----------  -------
+all                1
+orthofinder        1
+total              2
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Feb  5 12:23:10 2024]
+localrule orthofinder:
+    input: resource/orthofinder
+    output: output/orthofinder
+    jobid: 1
+    reason: Missing output files: output/orthofinder
+    resources: tmpdir=/var/folders/mv/wrkfyz2d17vd3f3j_wlzxrph0000gn/T
+
+Activating conda environment: .snakemake/conda/0df9f43b8d3739a6e13baec256e18b81_
+RuleException:
+CalledProcessError in file /Users/emelbiner/PycharmProjects/miuulm/Snakefile, line 85:
+Command 'source /Users/emelbiner/anaconda3/bin/activate '/Users/emelbiner/PycharmProjects/miuulm/.snakemake/conda/0df9f43b8d3739a6e13baec256e18b81_'; set -euo pipefail;  /Users/emelbiner/anaconda3/envs/blast/bin/python3.12 /Users/emelbiner/PycharmProjects/miuulm/.snakemake/scripts/tmpnrwi0cna.orthofinder.py' returned non-zero exit status 1.
+[Mon Feb  5 12:23:10 2024]
+Error in rule orthofinder:
+    jobid: 1
+    input: resource/orthofinder
+    output: output/orthofinder
+    conda-env: /Users/emelbiner/PycharmProjects/miuulm/.snakemake/conda/0df9f43b8d3739a6e13baec256e18b81_
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2024-02-05T122310.057880.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

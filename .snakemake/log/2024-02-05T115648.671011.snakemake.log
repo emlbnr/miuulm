@@ -1,0 +1,43 @@
+Building DAG of jobs...
+Your conda installation is not configured to use strict channel priorities. This is however crucial for having robust and correct environments (for details, see https://conda-forge.org/docs/user/tipsandtricks.html). Please consider to configure strict priorities by executing 'conda config --set channel_priority strict'.
+Creating conda environment envs/env.yaml...
+Downloading and installing remote packages.
+CreateCondaEnvironmentException:
+Could not create conda environment from /Users/emelbiner/PycharmProjects/miuulm/envs/env.yaml:
+Command:
+conda env create --quiet --file "/Users/emelbiner/PycharmProjects/miuulm/.snakemake/conda/de812e9954d61b31ab7683fd94e75f92_.yaml" --prefix "/Users/emelbiner/PycharmProjects/miuulm/.snakemake/conda/de812e9954d61b31ab7683fd94e75f92_"
+Output:
+Retrieving notices: ...working... done
+Channels:
+ - bioconda
+ - conda-forge
+ - nanoporetech
+ - defaults
+Platform: osx-arm64
+Collecting package metadata (repodata.json): ...working... done
+Solving environment: ...working... failed
+
+PackagesNotFoundError: The following packages are not available from current channels:
+
+  - bioconda::blast
+  - bioconda::orthofinder
+
+Current channels:
+
+  - https://conda.anaconda.org/bioconda/osx-arm64
+  - https://conda.anaconda.org/conda-forge/osx-arm64
+  - https://conda.anaconda.org/nanoporetech/osx-arm64
+  - https://repo.anaconda.com/pkgs/main/osx-arm64
+  - https://repo.anaconda.com/pkgs/r/osx-arm64
+  - https://conda.anaconda.org/bioconda
+  - https://conda.anaconda.org/bioconda
+
+To search for alternate channels that may provide the conda package you're
+looking for, navigate to
+
+    https://anaconda.org
+
+and use the search bar at the top of the page.
+
+
+

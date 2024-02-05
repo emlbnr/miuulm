@@ -1,0 +1,7 @@
+==> 2024-02-05 11:58:29 <==
+# cmd: /Users/emelbiner/anaconda3/bin/conda-env create --quiet --file /Users/emelbiner/PycharmProjects/miuulm/.snakemake/conda/0df9f43b8d3739a6e13baec256e18b81_.yaml --prefix /Users/emelbiner/PycharmProjects/miuulm/.snakemake/conda/0df9f43b8d3739a6e13baec256e18b81_
+# conda version: 23.11.0
++conda-forge/osx-arm64::perl-5.32.1-7_h4614cfb_perl5
++nanoporetech/osx-arm64::infernal-1.1.4+neon-h8a0c2ca_1
++nanoporetech/osx-arm64::trnascan-se-2.0.12-pl5321h8a0c2ca_0
+# update specs: ['trnascan-se']

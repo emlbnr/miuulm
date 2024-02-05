@@ -1,0 +1,76 @@
+Building DAG of jobs...
+Your conda installation is not configured to use strict channel priorities. This is however crucial for having robust and correct environments (for details, see https://conda-forge.org/docs/user/tipsandtricks.html). Please consider to configure strict priorities by executing 'conda config --set channel_priority strict'.
+Retrieving input from storage.
+Using shell: /bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job                        count
+-----------------------  -------
+all                            1
+tRNAscan                       1
+tRNAscan_stats                 1
+tRNAscan_stats_wildcard        1
+total                          4
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Feb  5 12:02:20 2024]
+localrule tRNAscan_stats_wildcard:
+    input: resource/fasta/G_muris.fasta
+    output: output/tRNAscan/G_muris.tRNA, output/tRNAscan/G_muris.stats
+    jobid: 3
+    reason: Missing output files: output/tRNAscan/G_muris.tRNA
+    wildcards: genome=G_muris
+    resources: tmpdir=/var/folders/mv/wrkfyz2d17vd3f3j_wlzxrph0000gn/T
+
+Activating conda environment: .snakemake/conda/0df9f43b8d3739a6e13baec256e18b81_
+[Mon Feb  5 12:02:33 2024]
+Finished job 3.
+1 of 4 steps (25%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Feb  5 12:02:33 2024]
+localrule tRNAscan:
+    input: resource/fasta/G_intestinalis.fasta
+    output: output/tRNA_scan_result.txt
+    jobid: 1
+    reason: Missing output files: output/tRNA_scan_result.txt
+    resources: tmpdir=/var/folders/mv/wrkfyz2d17vd3f3j_wlzxrph0000gn/T
+
+bash scripts/tRNAscan.sh resource/fasta/G_intestinalis.fasta output/tRNA_scan_result.txt
+Activating conda environment: .snakemake/conda/0df9f43b8d3739a6e13baec256e18b81_
+[Mon Feb  5 12:02:48 2024]
+Finished job 1.
+2 of 4 steps (50%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Feb  5 12:02:48 2024]
+localrule tRNAscan_stats:
+    input: resource/fasta/G_intestinalis.fasta
+    output: output/G_intestinalis.tRNA, output/G_intestinalis.stats
+    jobid: 2
+    reason: Code has changed since last execution; Software environment definition has changed since last execution
+    resources: tmpdir=/var/folders/mv/wrkfyz2d17vd3f3j_wlzxrph0000gn/T
+
+Activating conda environment: .snakemake/conda/0df9f43b8d3739a6e13baec256e18b81_
+[Mon Feb  5 12:03:04 2024]
+Finished job 2.
+3 of 4 steps (75%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Feb  5 12:03:04 2024]
+localrule all:
+    input: output/tRNA_scan_result.txt, output/G_intestinalis.tRNA, output/tRNAscan/G_muris.tRNA, output/tRNAscan/G_intestinalis.tRNA, output/tRNAscan/G_muris.tRNA, output/tRNAscan/S_salmonicida.tRNA
+    jobid: 0
+    reason: Input files updated by another job: output/tRNA_scan_result.txt, output/G_intestinalis.tRNA, output/tRNAscan/G_muris.tRNA
+    resources: tmpdir=/var/folders/mv/wrkfyz2d17vd3f3j_wlzxrph0000gn/T
+
+[Mon Feb  5 12:03:04 2024]
+Finished job 0.
+4 of 4 steps (100%) done
+Complete log: .snakemake/log/2024-02-05T120219.797812.snakemake.log
