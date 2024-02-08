@@ -1,12 +1,11 @@
 rule all:
     input:
-       # "output/tRNA_scan_result.txt",
-       # "output/G_intestinalis.tRNA",
-       # expand("output/tRNAscan/{sp}.tRNA", sp = ["G_muris", "G_intestinalis"]),
-       # expand("output/tRNAscan/{sp}.tRNA", sp =["G_muris", "S_salmonicida"]),
-        #expand("output/blastn/G_intestinalis/{sp}.blastn", sp = ["G_muris", "S_salmonicida"]),
-        #expand("output/barrnap/{genome}_rrna_count.gff", genome=['G_intestinalis', 'G_muris', 'S_salmonicida']),
-        "output/orthofinder/"
+       #"output/tRNA_scan_result.txt",
+       #"output/G_intestinalis.tRNA",
+        expand("output/tRNAscan/{sp}.tRNA", sp = ["G_muris", "G_intestinalis"]),
+        expand("output/tRNAscan/{sp}.tRNA", sp =["G_muris", "S_salmonicida"]),
+        expand("output/blastn/G_intestinalis/{sp}.blastn", sp = ["G_muris", "S_salmonicida"]),
+        #"output/orthofinder/"
 
 rule tRNAscan:
     input: "resource/fasta/G_intestinalis.fasta"
@@ -53,7 +52,7 @@ rule makeblastdb:
         "output/{type}/db/{db}.nto"
     params:
         outname = "output/{type}/db/{db}"
-    #conda: "/home/alperen_uysal/miniconda3/envs/blast"
+
     shell:
         'makeblastdb -dbtype nucl -in {input} -out {params.outname}'
 
@@ -70,7 +69,7 @@ rule blastn:
         max_target_seqs = 1,
         max_hsps = 1,
         db_prefix = "output/{type}/db/{db}"
-    #conda: "/home/alperen_uysal/miniconda3/envs/blast"
+
     script:
         "scripts/blastn.py"
 

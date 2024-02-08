@@ -1,0 +1,13 @@
+name: miuulm
+channels:
+  - bioconda
+  - conda-forge
+  - nanoporetech
+dependencies:
+  - trnascan-se
+ # - bioconda::blast
+  - bioconda::orthofinder=2.5.5
+
+#use --conda-frontend conda to use conda instead of mamba
+#snakemake --jobs 1 -c1 --use-conda --conda-frontend conda --printshellcmds
+
